@@ -148,9 +148,14 @@ final class PCGElementor_Extended {
 			return;
 		}
 
+		if( !class_exists( '\ElementorPro\Plugin' ) ){
+			add_action( 'admin_notices', [ $this, 'admin_notice_missing__plugin' ] );
+			return;
+		}
+
 		// Add Plugin actions
+
 		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
-		add_action( 'elementor/controls/controls_registered', [ $this, 'init_controls' ] );
 	}
 
 	/**
@@ -239,29 +244,11 @@ final class PCGElementor_Extended {
 	public function init_widgets() {
 
 		// Include Widget files
-		require_once( __DIR__ . '/widgets/sample-widget.php' );
+		require_once( __DIR__ . '/widgets/testimonial-image-carousel.php' );
 
 		// Register widget
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Sample_Widget() );
-
-	}
-
-	/**
-	 * Init Controls
-	 *
-	 * Include controls files and register them
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 */
-	public function init_controls() {
-
-		// Include Control files
-		require_once( __DIR__ . '/controls/sample-control.php' );
-
-		// Register control
-		\Elementor\Plugin::$instance->controls_manager->register_control( 'control-type-', new \Sample_Control() );
+		\Elementor\Plugin::instance()->widgets_manager
+			->register_widget_type( new \PCGElementor_Extended\Widgets\Testimonial_Image_Carousel() );
 
 	}
 
