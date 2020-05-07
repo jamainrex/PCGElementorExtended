@@ -7,7 +7,7 @@ Description: A brief description of the Plugin.
 Version: 1.0
 Author: Jerex
 Author URI: http://URI_Of_The_Plugin_Author
-License: MIT License
+License: GNU General Public License v3.0
 Text Domain: pcgelementor-extended
 */
 
