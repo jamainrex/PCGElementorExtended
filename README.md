@@ -1,2 +1,2 @@
-# elementor-extended
-Extended Elementor Plugin
+# PCGElementor-extended
+Elementor extended plugin with new features.
