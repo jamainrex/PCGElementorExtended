@@ -148,10 +148,10 @@ final class PCGElementor_Extended {
 			return;
 		}
 
-		if( !class_exists( \ElementorPro\Plugin::class ) ){
+		/*if( !class_exists( \ElementorPro\Plugin::class ) ){
 			add_action( 'admin_notices', [ $this, 'admin_notice_missing_elementor_pro_plugin' ] );
 			return;
-		}
+		}*/
 
 		// Add Plugin actions
 
@@ -257,7 +257,7 @@ final class PCGElementor_Extended {
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
 	}
 
-		/**
+	/**
 	 * Init Widgets
 	 *
 	 * Include widgets files and register them
@@ -267,8 +267,9 @@ final class PCGElementor_Extended {
 	 * @access public
 	 */
 	public function init_widgets() {
+		require_once( __DIR__ . '/widgets/testimonial-image-carousel.php' );
 		$widget_manager = \ElementorPro\Plugin::elementor()->widgets_manager;
-		$widget_manager->register_widget_type( new \PCGElementor_Extended\Widgets\Testimonial_Image_Carousel() );
+		$widget_manager->register_widget_type( new Testimonial_Image_Carousel() );
 	}
 
 }

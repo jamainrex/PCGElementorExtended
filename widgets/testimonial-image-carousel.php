@@ -1,5 +1,4 @@
 <?php
-namespace PCGElementor_Extended\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes;
@@ -23,7 +22,7 @@ class Testimonial_Image_Carousel extends Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-testimonial-image-carousel';
+		return 'eicon-testimonial-carousel';
 	}
 
 	public function get_keywords() {
@@ -514,6 +513,14 @@ class Testimonial_Image_Carousel extends Base {
 		);
 
 		$repeater->add_control(
+			'logo',
+			[
+				'label' => __( 'Logo', 'pcgelementor-extended' ),
+				'type' => Controls_Manager::MEDIA,
+			]
+		);
+
+		$repeater->add_control(
 			'name',
 			[
 				'label' => __( 'Name', 'pcgelementor-extended' ),
@@ -604,24 +611,24 @@ class Testimonial_Image_Carousel extends Base {
 		}
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( $element_key . '-testimonial' ); ?>>
+        <div <?php echo $this->get_render_attribute_string( $element_key . '-testimonial' ); ?>>
 			<?php if ( $slide['content'] ) : ?>
-				<div class="elementor-testimonial__content">
-					<div class="elementor-testimonial__text">
+                <div class="elementor-testimonial__content">
+                    <div class="elementor-testimonial__text">
 						<?php echo $slide['content']; ?>
-					</div>
+                    </div>
 					<?php echo $this->print_cite( $slide, 'outside' ); ?>
-				</div>
+                </div>
 			<?php endif; ?>
-			<div class="elementor-testimonial__footer">
+            <div class="elementor-testimonial__footer">
 				<?php if ( $slide['image']['url'] ) : ?>
-					<div class="elementor-testimonial__image">
-						<img <?php echo $this->get_render_attribute_string( $element_key . '-image' ); ?>>
-					</div>
+                    <div class="elementor-testimonial__image">
+                        <img <?php echo $this->get_render_attribute_string( $element_key . '-image' ); ?>>
+                    </div>
 				<?php endif; ?>
 				<?php echo $this->print_cite( $slide, 'inside' ); ?>
-			</div>
-		</div>
+            </div>
+        </div>
 		<?php
 	}
 
