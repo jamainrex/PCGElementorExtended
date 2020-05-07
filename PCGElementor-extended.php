@@ -149,7 +149,7 @@ final class PCGElementor_Extended {
 		}
 
 		if( !class_exists( '\ElementorPro\Plugin' ) ){
-			add_action( 'admin_notices', [ $this, 'admin_notice_missing__plugin' ] );
+			add_action( 'admin_notices', [ $this, 'admin_notice_missing_elementor_pro_plugin' ] );
 			return;
 		}
 
@@ -233,6 +233,31 @@ final class PCGElementor_Extended {
 	}
 
 	/**
+	 * Admin notice
+	 *
+	 * Warning when the site doesn't have Elementor Pro installed or activated.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @access public
+	 */
+	public function admin_notice_missing_elementor_pro_plugin() {
+
+		if ( isset( $_GET['activate'] ) ) {
+			unset( $_GET['activate'] );
+		}
+
+		$message = sprintf(
+		/* translators: 1: Plugin name 2: Elementor */
+			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'pcgelementor-extended' ),
+			'<strong>' . esc_html__( 'PCGElementor Extended', 'pcgelementor-extended' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor Pro', 'pcgelementor-extended' ) . '</strong>'
+		);
+
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+	}
+
+		/**
 	 * Init Widgets
 	 *
 	 * Include widgets files and register them
