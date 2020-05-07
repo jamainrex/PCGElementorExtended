@@ -148,7 +148,7 @@ final class PCGElementor_Extended {
 			return;
 		}
 
-		if( !class_exists( '\ElementorPro\Plugin' ) ){
+		if( !class_exists( \ElementorPro\Plugin::class ) ){
 			add_action( 'admin_notices', [ $this, 'admin_notice_missing_elementor_pro_plugin' ] );
 			return;
 		}
