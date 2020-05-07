@@ -267,14 +267,8 @@ final class PCGElementor_Extended {
 	 * @access public
 	 */
 	public function init_widgets() {
-
-		// Include Widget files
-		require_once( __DIR__ . '/widgets/testimonial-image-carousel.php' );
-
-		// Register widget
-		\Elementor\Plugin::instance()->widgets_manager
-			->register_widget_type( new \PCGElementor_Extended\Widgets\Testimonial_Image_Carousel() );
-
+		$widget_manager = \ElementorPro\Plugin::elementor()->widgets_manager;
+		$widget_manager->register_widget_type( new \PCGElementor_Extended\Widgets\Testimonial_Image_Carousel() );
 	}
 
 }
