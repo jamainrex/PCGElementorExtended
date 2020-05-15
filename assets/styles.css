@@ -38,3 +38,17 @@
 
 .elementor-widget-testimonial-image-carousel.elementor-pagination-type-bullets .elementor-swiper-button-next, .elementor-widget-testimonial-image-carousel.elementor-pagination-type-bullets .elementor-swiper-button-prev, .elementor-widget-reviews.elementor-pagination-type-bullets .elementor-swiper-button-next, .elementor-widget-reviews.elementor-pagination-type-bullets .elementor-swiper-button-prev {
     top: calc( 50% - ( 40px / 2 )); }
+
+
+.elementor-testimonial__content__wrap {
+    display: block;
+}
+.elementor-testimonial__content__wrap .elementor-testimonial__content,
+.elementor-testimonial__content__wrap .elementor-testimonial__footer
+{
+    display: block;
+}
+
+.elementor-testimonial__cover img {
+    width: 100%;
+}
