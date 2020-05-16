@@ -7,8 +7,10 @@
     line-height: 1.5; }
 
 .elementor-widget-testimonial-image-carousel .elementor-testimonial__image img {
-    width: 50px;
-    height: 50px; }
+    width: auto;
+    height: auto;
+    border-radius: 0;
+}
 
 .elementor-widget-testimonial-image-carousel .elementor-arrows-yes .elementor-main-swiper, .elementor-widget-reviews .elementor-arrows-yes .elementor-main-swiper {
     width: calc( 95% - 40px); }
@@ -40,15 +42,141 @@
     top: calc( 50% - ( 40px / 2 )); }
 
 
-.elementor-testimonial__content__wrap {
+/*.elementor-testimonial__content__wrap {
     display: block;
 }
 .elementor-testimonial__content__wrap .elementor-testimonial__content,
 .elementor-testimonial__content__wrap .elementor-testimonial__footer
-{
+ {
     display: block;
+}*/
+
+.elementor-widget-testimonial-image-carousel .elementor-testimonial__cover img {
+    width: 100%;
 }
 
-.elementor-testimonial__cover img {
+/* Carousel Swiper */
+.elementor-widget-testimonial-image-carousel .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 5px;
+    left: 40%;
     width: 100%;
+}
+
+.elementor-widget-testimonial-image-carousel .swiper-pagination-bullet {
+    background: #fff;
+    opacity: 1;
+}
+
+.elementor-widget-testimonial-image-carousel .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #000;
+    opacity: 1;
+}
+
+.elementor-widget-testimonial-image-carousel .elementor-testimonial__cover {
+    margin: 0;
+    padding: 0;
+}
+
+.elementor-widget-testimonial-image-carousel .elementor-main-swiper {
+    padding-bottom: 0 !important;
+    box-shadow: 2px 1px 5px #888;
+}
+
+element {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.elementor-widget-testimonial-image-carousel .elementor-163 .elementor-element.elementor-element-4ac6cc7 .elementor-swiper-button {
+    font-size: 20px;
+}
+.elementor-widget-testimonial-image-carousel .elementor-widget-testimonial-image-carousel.elementor-pagination-type-bullets .elementor-swiper-button-next, .elementor-widget-testimonial-image-carousel.elementor-pagination-type-bullets .elementor-swiper-button-prev, .elementor-widget-reviews.elementor-pagination-type-bullets .elementor-swiper-button-next, .elementor-widget-reviews.elementor-pagination-type-bullets .elementor-swiper-button-prev {
+    top: calc( 50% - ( 40px / 2 ));
+}
+.elementor-widget-testimonial-image-carousel .elementor-widget-testimonial-image-carousel .elementor-main-swiper .elementor-swiper-button-next, .elementor-widget-reviews .elementor-main-swiper .elementor-swiper-button-next {
+    right: 0;
+}
+.elementor-widget-testimonial-image-carousel .elementor-swiper-button-next {
+    right: 10px;
+}
+
+.elementor-widget-testimonial-image-carousel .elementor-swiper-button {
+    display: inline-block;
+    line-height: 1;
+    background-color: #0368ab;
+    font-size: 15px;
+    padding: 10px;
+    -webkit-border-radius: 3px;
+    border-radius: 50%;
+    color: #fff;
+    fill: #fff;
+    text-align: center;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+
+    top: calc( 98% - ( 30px / 2 )) !important;
+
+    box-shadow: 1px 1px 3px #888;
+
+    opacity: .5;
+
+    cursor: pointer;
+
+    z-index: 9999;
+}
+
+.elementor-swiper-button:hover, .elementor-swiper-button:focus {
+    opacity: 1;
+}
+
+.elementor-widget-testimonial-image-carousel .elementor-swiper-button.elementor-swiper-button-next {
+    right: -20px !important;
+}
+
+.elementor-widget-testimonial-image-carousel .elementor-swiper-button.elementor-swiper-button-prev {
+    left: -20px !important;
+    /*left: unset;*/
+}
+
+.elementor-widget-testimonial-image-carousel .elementor-testimonial {
+    padding: 35px;
+}
+
+
+.elementor-testimonial__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+    transition-duration: 0.4s;
+}
+
+.elementor-testimonial__cover {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: 50%;
+    z-index: 1;
+}
+
+.elementor-testimonial__cover__wrap {
+    z-index: 1;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.elementor-testimonial__cover__wrapper {
+    flex: 1 1 auto;
+}
+
+.elementor-testimonial__text:before {
+    content: "\201D";
+    display: block;
+    font-size: 120px;
+    font-family: Gotham;
+    line-height: 120px;
 }
